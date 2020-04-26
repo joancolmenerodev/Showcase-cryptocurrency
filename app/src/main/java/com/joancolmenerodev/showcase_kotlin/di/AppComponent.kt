@@ -1,8 +1,9 @@
-package com.joancolmenerodev.showcase_kotlin.components
+package com.joancolmenerodev.showcase_kotlin.di
 
-import com.joancolmenerodev.showcase_kotlin.App
+import com.joancolmenerodev.networking.di.NetworkingModule
 import com.joancolmenerodev.showcase_kotlin.di.modules.AppFeaturesModule
 import com.joancolmenerodev.showcase_kotlin.di.modules.AppModule
+import com.joancolmenerodev.showcase_kotlin.di.modules.CoroutineDispatcherProviderModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -14,7 +15,9 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         AppModule::class,
-        AppFeaturesModule::class
+        NetworkingModule::class,
+        AppFeaturesModule::class,
+        CoroutineDispatcherProviderModule::class
     ]
 )
 interface AppComponent : AndroidInjector<App> {

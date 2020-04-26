@@ -61,6 +61,7 @@ dependencies {
 
     api(LibrariesDependencies.LOTTIE)
 
+    implementation project(ModuleDependencies.LIBRARY_BASE)
     implementation project(ModuleDependencies.NETWORKING)
     implementation project(ModuleDependencies.CRYPTO_LIST)
 }

@@ -15,6 +15,8 @@ object TestLibraryDependencies {
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${TestLibraryVersion.coroutinesCoreVersion}"
     const val mockWebServer =
         "com.squareup.okhttp3:mockwebserver:${TestLibraryVersion.okHttpVersion}"
+    const val kotlinxCoroutinestest =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${TestLibraryVersion.kotlinXCoroutinesTestVersion}"
 }
 
 private object TestLibraryVersion {
@@ -26,4 +28,5 @@ private object TestLibraryVersion {
     const val testRunnerVersion = "1.2.0"
     const val okhttp3IdlingResourcesVersion = "1.0.0"
     const val mockKVersion = "1.9"
+    const val kotlinXCoroutinesTestVersion = "1.3.5"
 }

@@ -1,7 +1,6 @@
-package com.joancolmenerodev.showcase_kotlin
+package com.joancolmenerodev.showcase_kotlin.di
 
 import android.app.Application
-import com.joancolmenerodev.showcase_kotlin.components.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector

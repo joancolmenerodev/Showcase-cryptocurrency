@@ -2,6 +2,7 @@ package com.joancolmenerodev.networking.di
 
 import com.joancolmenerodev.networking.BuildConfig
 import com.joancolmenerodev.networking.retrofit.HeadersInterceptor
+import com.joancolmenerodev.networking.retrofit.RetrofitServiceModule
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -10,14 +11,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Module
+@Module(includes = [RetrofitServiceModule::class])
 object NetworkingModule {
 
     @Provides
     @Singleton
     fun provideRetrofit(httpClient: OkHttpClient): Retrofit =
         Retrofit.Builder()
-            .baseUrl("url")
+            .baseUrl("https://pro-api.coinmarketcap.com/")
             .client(httpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

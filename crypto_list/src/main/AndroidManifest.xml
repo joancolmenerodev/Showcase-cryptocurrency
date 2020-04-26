@@ -3,7 +3,7 @@
     package="com.joancolmenerodev.crypto_list">
 
     <application>
-        <activity android:name=".CryptoListActivity"></activity>
+        <activity android:name=".presentation.CryptoListActivity"></activity>
     </application>
 
 </manifest>

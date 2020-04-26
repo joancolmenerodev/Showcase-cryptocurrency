@@ -6,7 +6,7 @@ import android.os.Handler
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.joancolmenerodev.crypto_list.CryptoListActivity
+import com.joancolmenerodev.crypto_list.presentation.CryptoListActivity
 
 class SplashActivity : AppCompatActivity() {
 

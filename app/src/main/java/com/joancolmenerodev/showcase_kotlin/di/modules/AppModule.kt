@@ -1,7 +1,7 @@
 package com.joancolmenerodev.showcase_kotlin.di.modules
 
 import android.content.Context
-import com.joancolmenerodev.showcase_kotlin.App
+import com.joancolmenerodev.showcase_kotlin.di.App
 import dagger.Module
 import dagger.Provides
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_view_corner_radius_list">4dp</dimen>
+    <dimen name="card_view_elevation_list">4dp</dimen>
+
+    <dimen name="crypto_item_name_size">18sp</dimen>
+    <dimen name="crypto_item_symbol_size">16sp</dimen>
+
+    <dimen name="padding_card_view">16dp</dimen>
+</resources>
