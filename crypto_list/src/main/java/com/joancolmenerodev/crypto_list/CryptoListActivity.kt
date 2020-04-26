@@ -1,12 +1,12 @@
-package com.joancolmenerodev.showcase_kotlin
+package com.joancolmenerodev.crypto_list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class ListActivity : AppCompatActivity() {
+class CryptoListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list)
+        setContentView(R.layout.activity_crypto_list)
     }
 }
