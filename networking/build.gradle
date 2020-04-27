@@ -25,12 +25,16 @@ android {
         release {
             minifyEnabled true
             debuggable false
+            buildConfigField 'String', "CoinMarketCapApiKey", ShowcaseKotlin_CoinMarketCap_ApiKey
+            resValue 'string', "coinmarketcap_api_key", ShowcaseKotlin_CoinMarketCap_ApiKey
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
         }
 
         debug {
             minifyEnabled false
             debuggable true
+            buildConfigField 'String', "CoinMarketCapApiKey", ShowcaseKotlin_CoinMarketCap_ApiKey
+            resValue 'string', "conmarketcap_api_key", ShowcaseKotlin_CoinMarketCap_ApiKey
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
         }
     }
@@ -39,12 +43,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation(LibrariesDependencies.RETROFIT_LOGGING_INTERCEPTOR)
     implementation(LibrariesDependencies.RETROFIT_GSON_CONVERTER)
     api(LibrariesDependencies.RETROFIT)

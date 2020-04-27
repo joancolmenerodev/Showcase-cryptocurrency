@@ -42,11 +42,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(ModuleDependencies.LIBRARY_BASE)
 
-
     kapt LibrariesDependencies.DAGGER_ANDROID_KAPT
     kapt LibrariesDependencies.DAGGER_KAPT
     kapt LibrariesDependencies.DAGGER_ANNOTATION_PROCESSOR
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation AndroidDependencies.CARDVIEW
     implementation AndroidDependencies.SUPPORT_CONSTRAINT_LAYOUT
     implementation AndroidDependencies.MATERIAL

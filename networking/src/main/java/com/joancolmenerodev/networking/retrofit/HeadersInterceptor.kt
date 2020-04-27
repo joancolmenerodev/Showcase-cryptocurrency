@@ -1,5 +1,6 @@
 package com.joancolmenerodev.networking.retrofit
 
+import com.joancolmenerodev.networking.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -13,4 +14,4 @@ class HeadersInterceptor : Interceptor {
 }
 
 private const val HEADER_KEY = "X-CMC_PRO_API_KEY"
-private const val API_KEY = "badb6455-0340-4bfb-9f60-80f51ae8bc0d"
+private const val API_KEY = BuildConfig.CoinMarketCapApiKey
