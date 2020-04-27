@@ -15,5 +15,4 @@ object RetrofitServiceModule {
         return retrofit.create(CryptoRetrofitService::class.java)
     }
 
-
 }

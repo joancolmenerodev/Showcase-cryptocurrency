@@ -1,8 +1,8 @@
 package com.joancolmenerodev.crypto_list.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.joancolmenerodev.crypto_list.R
 import com.joancolmenerodev.crypto_list.domain.model.CoinList
@@ -14,34 +14,30 @@ import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_crypto_list.*
 import javax.inject.Inject
 
-class CryptoListActivity : AppCompatActivity(), CryptoListContract.View  {
+class CryptoListActivity : AppCompatActivity(), CryptoListContract.View {
 
     private lateinit var adapter: CryptoListAdapter
-    private lateinit var gridLayoutManager: GridLayoutManager
 
     @Inject
-    lateinit var presenter : CryptoListContract.Presenter
+    lateinit var presenter: CryptoListContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crypto_list)
         AndroidInjection.inject(this)
 
-        initViews()
+        setupRecyclerView()
         presenter.onViewReady(this)
     }
 
-    private fun initViews() {
-        gridLayoutManager = GridLayoutManager(this, COLUMNS_GRID)
+    private fun setupRecyclerView() {
+        val gridLayoutManager = GridLayoutManager(this, COLUMNS_GRID)
+        rv_crypto_currency_list.layoutManager = gridLayoutManager
     }
 
     override fun showResults(currencyList: List<CoinList>) {
-        adapter = CryptoListAdapter(currencyList)
+        adapter = CryptoListAdapter(currencyList) { cryptoId -> presenter.onCoinClicked(cryptoId) }
         rv_crypto_currency_list.adapter = adapter
-        rv_crypto_currency_list.layoutManager = gridLayoutManager
-        adapter.let {
-            it.onItemClick = { cryptoId -> presenter.onCoinClicked(cryptoId) }
-        }
     }
 
     override fun showProgressBar(isVisible: Boolean) {
@@ -49,7 +45,7 @@ class CryptoListActivity : AppCompatActivity(), CryptoListContract.View  {
     }
 
     override fun navigateToCoinDetail(cryptoId: Int) {
-        Toast.makeText(this,"Not implemented yet",Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Not implemented yet", Toast.LENGTH_LONG).show()
     }
 
     override fun networkIssue() {
@@ -70,4 +66,5 @@ class CryptoListActivity : AppCompatActivity(), CryptoListContract.View  {
     }
 
 }
+
 private const val COLUMNS_GRID = 2

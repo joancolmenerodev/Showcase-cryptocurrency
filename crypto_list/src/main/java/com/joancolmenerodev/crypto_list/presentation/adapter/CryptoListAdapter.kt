@@ -9,11 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.joancolmenerodev.crypto_list.R
 import com.joancolmenerodev.crypto_list.domain.model.CoinList
 
-class CryptoListAdapter(private val cryptoList: List<CoinList>) :
+class CryptoListAdapter(private val cryptoList: List<CoinList>, private val onItemClick: (cryptoId: Int) -> Unit) :
     RecyclerView.Adapter<CoinListViewHolder>() {
-
-    lateinit var onItemClick: (cryptoId: Int) -> Unit
-
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): CoinListViewHolder {
         return CoinListViewHolder(

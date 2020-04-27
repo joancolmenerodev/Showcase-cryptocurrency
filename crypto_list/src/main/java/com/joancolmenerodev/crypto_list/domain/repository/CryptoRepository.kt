@@ -7,4 +7,5 @@ import com.joancolmenerodev.library_base.ErrorEntity
 interface CryptoRepository {
 
     suspend fun getCoinList(): Either<ErrorEntity, List<CoinList>>
+
 }

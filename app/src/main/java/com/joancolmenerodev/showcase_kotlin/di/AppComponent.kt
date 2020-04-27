@@ -2,7 +2,6 @@ package com.joancolmenerodev.showcase_kotlin.di
 
 import com.joancolmenerodev.networking.di.NetworkingModule
 import com.joancolmenerodev.showcase_kotlin.di.modules.AppFeaturesModule
-import com.joancolmenerodev.showcase_kotlin.di.modules.AppModule
 import com.joancolmenerodev.showcase_kotlin.di.modules.CoroutineDispatcherProviderModule
 import dagger.BindsInstance
 import dagger.Component
@@ -14,7 +13,6 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidInjectionModule::class,
-        AppModule::class,
         NetworkingModule::class,
         AppFeaturesModule::class,
         CoroutineDispatcherProviderModule::class

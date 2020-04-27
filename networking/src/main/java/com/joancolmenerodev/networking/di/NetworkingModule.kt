@@ -18,14 +18,17 @@ object NetworkingModule {
     @Singleton
     fun provideRetrofit(httpClient: OkHttpClient): Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://pro-api.coinmarketcap.com/")
+            .baseUrl(BASE_URL)
             .client(httpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor, headersInterceptor: HeadersInterceptor): OkHttpClient = OkHttpClient()
+    fun provideOkHttpClient(
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+        headersInterceptor: HeadersInterceptor
+    ): OkHttpClient = OkHttpClient()
         .newBuilder()
         .addInterceptor(httpLoggingInterceptor)
         .addInterceptor(headersInterceptor)
@@ -33,7 +36,7 @@ object NetworkingModule {
 
     @Provides
     @Singleton
-    fun provideHttpLogginInterceptor() : HttpLoggingInterceptor {
+    fun provideHttpLogginInterceptor(): HttpLoggingInterceptor {
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.level = when {
             BuildConfig.DEBUG -> HttpLoggingInterceptor.Level.BODY
@@ -48,3 +51,5 @@ object NetworkingModule {
         return HeadersInterceptor()
     }
 }
+
+private const val BASE_URL = "https://pro-api.coinmarketcap.com/"
