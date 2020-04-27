@@ -3,7 +3,7 @@ package com.joancolmenerodev.crypto_list.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Data(
+data class DataDTO(
     @SerializedName("first_historical_data")
     val firstHistoricalData: String,
     @SerializedName("id")

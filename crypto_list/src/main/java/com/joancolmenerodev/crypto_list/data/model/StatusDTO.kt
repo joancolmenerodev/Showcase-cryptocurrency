@@ -3,7 +3,7 @@ package com.joancolmenerodev.crypto_list.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Status(
+data class StatusDTO(
     @SerializedName("credit_count")
     val creditCount: Int,
     @SerializedName("elapsed")

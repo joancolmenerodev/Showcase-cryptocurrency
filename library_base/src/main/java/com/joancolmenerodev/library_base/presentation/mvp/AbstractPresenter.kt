@@ -1,15 +1,16 @@
 package com.joancolmenerodev.library_base.presentation.mvp
 
 import com.joancolmenerodev.library_base.threading.CoroutineDispatcherProvider
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 abstract class AbstractPresenter<T : PresenterView>(private val uiContext: CoroutineDispatcherProvider) :
-    BasePresenter<T>, CoroutineScope {
+    BasePresenter<T> {
 
     private val job = Job()
-    override val coroutineContext: CoroutineContext = job + uiContext.main()
 
     var view: T? = null
 
@@ -21,5 +22,14 @@ abstract class AbstractPresenter<T : PresenterView>(private val uiContext: Corou
     override fun onViewReady(view: T) {
         this.view = view
     }
+
+    protected fun launch(
+        context: CoroutineContext = uiContext.main(),
+        block: suspend CoroutineScope.(T) -> Unit
+    ): Job = view?.let {
+        CoroutineScope(context + job + CoroutineExceptionHandler { _, error -> throw error })
+            .launch { block(it) }
+
+    } ?: throw NotImplementedError("View not attached correctly")
 
 }

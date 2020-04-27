@@ -6,9 +6,9 @@ import com.joancolmenerodev.crypto_list.domain.model.CoinList
 
 data class CryptoResponse(
     @SerializedName("data")
-    val `data`: List<Data>,
+    val `data`: List<DataDTO>,
     @SerializedName("status")
-    val status: Status
+    val statusDTO: StatusDTO
 )
 
 internal fun CryptoResponse.toDomainModel() = this.data.map { CoinList(it.id, it.name, it.symbol) }
