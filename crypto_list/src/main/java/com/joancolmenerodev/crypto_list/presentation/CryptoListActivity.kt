@@ -24,10 +24,13 @@ class CryptoListActivity : AppCompatActivity(), CryptoListContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crypto_list)
-        AndroidInjection.inject(this)
-
+        inject()
         setupRecyclerView()
         presenter.onViewReady(this)
+    }
+
+    private fun inject(){
+        AndroidInjection.inject(this)
     }
 
     private fun setupRecyclerView() {

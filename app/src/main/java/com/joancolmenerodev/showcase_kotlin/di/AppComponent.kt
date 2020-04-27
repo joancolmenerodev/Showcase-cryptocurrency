@@ -1,6 +1,7 @@
 package com.joancolmenerodev.showcase_kotlin.di
 
 import com.joancolmenerodev.networking.di.NetworkingModule
+import com.joancolmenerodev.showcase_kotlin.App
 import com.joancolmenerodev.showcase_kotlin.di.modules.AppFeaturesModule
 import com.joancolmenerodev.showcase_kotlin.di.modules.CoroutineDispatcherProviderModule
 import dagger.BindsInstance
