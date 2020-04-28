@@ -1,6 +1,7 @@
 package com.joancolmenerodev.networking.di
 
 import com.joancolmenerodev.networking.BuildConfig
+import com.joancolmenerodev.networking.retrofit.ErrorInterceptor
 import com.joancolmenerodev.networking.retrofit.HeadersInterceptor
 import com.joancolmenerodev.networking.retrofit.RetrofitServiceModule
 import dagger.Module
@@ -27,11 +28,13 @@ object NetworkingModule {
     @Singleton
     fun provideOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
-        headersInterceptor: HeadersInterceptor
+        headersInterceptor: HeadersInterceptor,
+        errorInterceptor: ErrorInterceptor
     ): OkHttpClient = OkHttpClient()
         .newBuilder()
         .addInterceptor(httpLoggingInterceptor)
         .addInterceptor(headersInterceptor)
+        .addInterceptor(errorInterceptor)
         .build()
 
     @Provides
@@ -43,12 +46,6 @@ object NetworkingModule {
             else -> HttpLoggingInterceptor.Level.NONE
         }
         return loggingInterceptor
-    }
-
-    @Provides
-    @Singleton
-    fun provideHeadersInterceptor(): HeadersInterceptor {
-        return HeadersInterceptor()
     }
 }
 

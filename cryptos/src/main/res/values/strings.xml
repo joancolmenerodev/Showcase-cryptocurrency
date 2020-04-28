@@ -1,0 +1,5 @@
+<resources>
+    <string name="service_unavailable_message">Service is unavailable on this moment</string>
+    <string name="no_coins_found_message">There\'s nothing in the list</string>
+    <string name="more_info_text">More info</string>
+</resources>

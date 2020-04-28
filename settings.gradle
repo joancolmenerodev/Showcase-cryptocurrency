@@ -1,5 +1,5 @@
 rootProject.name='Showcase-Kotlin'
 include ':app'
 include ':networking'
-include ':crypto_list'
+include ':cryptos'
 include ':library_base'

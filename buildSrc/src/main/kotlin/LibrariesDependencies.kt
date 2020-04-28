@@ -1,5 +1,4 @@
 object LibrariesDependencies {
-    const val LOTTIE = "com.airbnb.android:lottie:${LibraryVersion.LOTTIE_VERSION}"
 
     const val DAGGER = "com.google.dagger:dagger:${LibraryVersion.DAGGER_VERSION}"
     const val DAGGER_ANDROID = "com.google.dagger:dagger-android:${LibraryVersion.DAGGER_VERSION}"
@@ -22,6 +21,9 @@ object LibrariesDependencies {
     const val COROUTINES =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibraryVersion.COROUTINES_CORE_VERSION}"
 
+    const val GLIDE = "com.github.bumptech.glide:glide:${LibraryVersion.GLIDE_VERSION}"
+    const val GLIDE_COMPILER = "com.github.bumptech.glide:compiler:${LibraryVersion.GLIDE_VERSION}"
+
 }
 
 private object LibraryVersion {
@@ -31,5 +33,5 @@ private object LibraryVersion {
     const val DAGGER_VERSION = "2.25.2"
     const val DAGGER_ANDROID_VERSION = "2.25.2"
     const val GSON_VERSION = "2.8.5"
-    const val LOTTIE_VERSION = "2.8.0"
+    const val GLIDE_VERSION = "4.9.0"
 }
