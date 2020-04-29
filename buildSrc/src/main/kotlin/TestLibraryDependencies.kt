@@ -3,12 +3,6 @@ object TestLibraryDependencies {
     const val jUnitExt = "junit:junit:${TestLibraryVersion.jUnitExtVersion}"
     const val mockK = "io.mockk:mockk:${TestLibraryVersion.mockKVersion}"
     const val testRunner = "androidx.test:runner:${TestLibraryVersion.testRunnerVersion}"
-    const val espressoCore =
-        "androidx.test.espresso:espresso-core:${TestLibraryVersion.espressoCoreVersion}"
-    const val espressoContrib =
-        "androidx.test.espresso:espresso-contrib:${TestLibraryVersion.espressoCoreVersion}"
-    const val espressoIntents =
-        "androidx.test.espresso:espresso-intents:${TestLibraryVersion.espressoCoreVersion}"
     const val okhttp3IdlingResources =
         "com.jakewharton.espresso:okhttp3-idling-resource:${TestLibraryVersion.okhttp3IdlingResourcesVersion}"
     const val coroutinesTest =
@@ -24,7 +18,6 @@ private object TestLibraryVersion {
     const val jUnitExtVersion = "1.1.1"
     const val okHttpVersion = "4.2.1"
     const val coroutinesCoreVersion = "1.3.2"
-    const val espressoCoreVersion = "3.2.0"
     const val testRunnerVersion = "1.2.0"
     const val okhttp3IdlingResourcesVersion = "1.0.0"
     const val mockKVersion = "1.9"

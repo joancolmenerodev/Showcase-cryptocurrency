@@ -47,6 +47,7 @@ dependencies {
     implementation AndroidDependencies.CARDVIEW
     implementation AndroidDependencies.SUPPORT_CONSTRAINT_LAYOUT
     implementation AndroidDependencies.MATERIAL
+    implementation TestLibraryDependencies.mockWebServer
 
     implementation project(ModuleDependencies.LIBRARY_BASE)
 }

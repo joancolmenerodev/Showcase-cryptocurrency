@@ -54,7 +54,7 @@ dependencies {
     api LibrariesDependencies.DAGGER
     api LibrariesDependencies.DAGGER_ANDROID
 
-    testImplementation TestLibraryDependencies.kotlinxCoroutinestest
-    testImplementation TestLibraryDependencies.jUnit
-    testImplementation TestLibraryDependencies.mockK
+    api TestLibraryDependencies.kotlinxCoroutinestest
+    api TestLibraryDependencies.jUnit
+    api TestLibraryDependencies.mockK
 }

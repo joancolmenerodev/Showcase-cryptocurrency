@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.joancolmenerodev.crypto_list">
+    package="com.joancolmenerodev.feature.crypto_list">
 
     <application>
-        <activity android:name=".presentation.CryptoListActivity"></activity>
+        <activity
+            android:name=".presentation.CryptoListActivity"
+            android:theme="@style/Theme.AppCompat" />
     </application>
 
 </manifest>

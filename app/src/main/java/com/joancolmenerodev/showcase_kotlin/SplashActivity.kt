@@ -3,7 +3,7 @@ package com.joancolmenerodev.showcase_kotlin
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.joancolmenerodev.crypto_list.presentation.CryptoListActivity
+import com.joancolmenerodev.feature.crypto_list.presentation.CryptoListActivity
 
 class SplashActivity : AppCompatActivity() {
 

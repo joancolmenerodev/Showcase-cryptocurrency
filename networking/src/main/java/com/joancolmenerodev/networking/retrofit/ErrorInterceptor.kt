@@ -19,6 +19,7 @@ class ErrorInterceptor @Inject constructor() : Interceptor {
                     HttpURLConnection.HTTP_UNAVAILABLE -> throw ServerException.ServiceUnavailable
 
                     HttpURLConnection.HTTP_NOT_FOUND -> throw ClientException.NotFound
+                    HttpURLConnection.HTTP_CLIENT_TIMEOUT -> throw ClientException.RequestTimeout
 
                     else -> throw ServiceException(IllegalStateException("The status code ${response.code} was received but not handled!"))
                 }
