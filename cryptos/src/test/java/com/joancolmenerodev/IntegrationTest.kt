@@ -1,6 +1,6 @@
 package com.joancolmenerodev
 
-import com.joancolmenerodev.feature.crypto_list.data.retrofit.service.CryptoRetrofitService
+import com.joancolmenerodev.base.retrofit.service.CryptoRetrofitService
 import com.joancolmenerodev.library_base.service.ClientException
 import com.joancolmenerodev.library_base.service.ServerException
 import com.joancolmenerodev.library_base.service.ServiceException
@@ -17,7 +17,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.io.IOException
 import java.net.HttpURLConnection
-import javax.inject.Inject
 
 abstract class IntegrationTest {
 

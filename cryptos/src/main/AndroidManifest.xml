@@ -4,6 +4,10 @@
 
     <application>
         <activity
+            android:name="com.joancolmenerodev.feature.crypto_detail.presentation.CryptoDetailActivity"
+            android:theme="@style/Theme.AppCompat"
+            android:parentActivityName=".presentation.CryptoListActivity"/>
+        <activity
             android:name=".presentation.CryptoListActivity"
             android:theme="@style/Theme.AppCompat" />
     </application>

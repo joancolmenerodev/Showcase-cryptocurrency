@@ -7,4 +7,14 @@
     <dimen name="crypto_item_symbol_size">16sp</dimen>
 
     <dimen name="padding_card_view">16dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+
+    <!--- Detail -->
+    <dimen name="crypto_symbol_size">60sp</dimen>
+    <dimen name="crypto_name_size">24sp</dimen>
+    <dimen name="crypto_width_logo_size">50dp</dimen>
+    <dimen name="crypto_height_logo_size">50dp</dimen>
+    <dimen name="crypto_description_margin_top">10dp</dimen>
+    <dimen name="crypto_website_margin_top">10dp</dimen>
+    <dimen name="crypto_image_margin_left">10dp</dimen>
 </resources>

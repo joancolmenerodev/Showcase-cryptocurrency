@@ -53,6 +53,7 @@ dependencies {
     api LibrariesDependencies.COROUTINES
     api LibrariesDependencies.DAGGER
     api LibrariesDependencies.DAGGER_ANDROID
+    api LibrariesDependencies.GLIDE
 
     api TestLibraryDependencies.kotlinxCoroutinestest
     api TestLibraryDependencies.jUnit

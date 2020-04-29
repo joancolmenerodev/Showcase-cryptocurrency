@@ -1,12 +1,13 @@
 package com.joancolmenerodev.feature.crypto_list.data.repository
 
+import com.joancolmenerodev.base.repository.CryptoRepositoryImpl
 import com.joancolmenerodev.feature.crypto_list.data.model.CryptoResponse
 import com.joancolmenerodev.feature.crypto_list.data.model.DataDTO
 import com.joancolmenerodev.feature.crypto_list.data.model.StatusDTO
-import com.joancolmenerodev.feature.crypto_list.data.retrofit.service.CryptoRetrofitService
+import com.joancolmenerodev.base.retrofit.service.CryptoRetrofitService
 import com.joancolmenerodev.feature.crypto_list.domain.exceptions.CryptoListExceptions
 import com.joancolmenerodev.feature.crypto_list.domain.model.Crypto
-import com.joancolmenerodev.feature.crypto_list.domain.repository.CryptoRepository
+import com.joancolmenerodev.base.repository.CryptoRepository
 import com.joancolmenerodev.library_base.service.ClientException
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -24,7 +25,8 @@ class CryptoRepositoryImplTest {
 
     @Before
     fun setUp() {
-        coinListRepository = CryptoRepositoryImpl(mockApi)
+        coinListRepository =
+            CryptoRepositoryImpl(mockApi)
     }
 
     @Test

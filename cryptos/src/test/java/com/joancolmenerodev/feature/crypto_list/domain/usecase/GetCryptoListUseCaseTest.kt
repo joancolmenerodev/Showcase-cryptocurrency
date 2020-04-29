@@ -2,7 +2,7 @@ package com.joancolmenerodev.feature.crypto_list.domain.usecase
 
 import com.joancolmenerodev.feature.crypto_list.domain.exceptions.CryptoListExceptions
 import com.joancolmenerodev.feature.crypto_list.domain.model.Crypto
-import com.joancolmenerodev.feature.crypto_list.domain.repository.CryptoRepository
+import com.joancolmenerodev.base.repository.CryptoRepository
 import com.joancolmenerodev.library_base.Either
 import io.mockk.coEvery
 import io.mockk.mockk

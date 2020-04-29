@@ -1,6 +1,6 @@
 package com.joancolmenerodev.networking.retrofit
 
-import com.joancolmenerodev.feature.crypto_list.data.retrofit.service.CryptoRetrofitService
+import com.joancolmenerodev.base.retrofit.service.CryptoRetrofitService
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable

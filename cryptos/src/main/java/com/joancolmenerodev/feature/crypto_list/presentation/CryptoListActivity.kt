@@ -1,9 +1,9 @@
 package com.joancolmenerodev.feature.crypto_list.presentation
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.joancolmenerodev.feature.crypto_detail.presentation.CryptoDetailActivity
 import com.joancolmenerodev.feature.crypto_list.R
 import com.joancolmenerodev.feature.crypto_list.domain.model.Crypto
 import com.joancolmenerodev.feature.crypto_list.presentation.adapter.CryptoListAdapter
@@ -29,7 +29,7 @@ class CryptoListActivity : AppCompatActivity(), CryptoListContract.View {
         presenter.onViewReady(this)
     }
 
-    private fun inject(){
+    private fun inject() {
         AndroidInjection.inject(this)
     }
 
@@ -48,7 +48,7 @@ class CryptoListActivity : AppCompatActivity(), CryptoListContract.View {
     }
 
     override fun navigateToCoinDetail(cryptoId: Int) {
-        Toast.makeText(this, "Not implemented yet", Toast.LENGTH_LONG).show()
+        startActivity(CryptoDetailActivity.getCryptoDetailActivityIntent(this, cryptoId))
     }
 
     override fun serviceUnavailable() {
