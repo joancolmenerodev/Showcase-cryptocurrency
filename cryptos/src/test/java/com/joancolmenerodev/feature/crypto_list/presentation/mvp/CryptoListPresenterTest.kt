@@ -27,7 +27,7 @@ class CryptoListPresenterTest {
     private lateinit var presenter: CryptoListPresenter
 
     @Before
-    fun setUp(){
+    fun setUp() {
         MockKAnnotations.init(this)
         presenter = CryptoListPresenter(getCryptoListUseCase, TestCoroutineDispatcherProvider())
     }
@@ -39,10 +39,10 @@ class CryptoListPresenterTest {
     }
 
     @Test
-    fun `given an user opens the page it loads a list of crypto`(){
+    fun `given an user opens the page it loads a list of crypto`() {
 
         //Assign
-        coEvery { getCryptoListUseCase.execute() } answers { Either.Right(cryptoList) }
+        coEvery { getCryptoListUseCase.execute(any()) } answers { Either.Right(cryptoList) }
 
         //Act
         presenter.onViewReady(view)
@@ -56,10 +56,10 @@ class CryptoListPresenterTest {
     }
 
     @Test
-    fun `given an user opens the page and there's a problem then it shows a message`(){
+    fun `given an user opens the page and there's a problem then it shows a message`() {
 
         //Assign
-        coEvery { getCryptoListUseCase.execute() } answers { Either.Left(CryptoListExceptions.CryptoListNotAvailable) }
+        coEvery { getCryptoListUseCase.execute(any()) } answers { Either.Left(CryptoListExceptions.CryptoListNotAvailable) }
 
         //Act
         presenter.onViewReady(view)
@@ -73,10 +73,10 @@ class CryptoListPresenterTest {
     }
 
     @Test
-    fun `given an user opens the page and there's a problem because there's no list found then it shows a message`(){
+    fun `given an user opens the page and there's a problem because there's no list found then it shows a message`() {
 
         //Assign
-        coEvery { getCryptoListUseCase.execute() } answers { Either.Left(CryptoListExceptions.CryptoListNotFound) }
+        coEvery { getCryptoListUseCase.execute(any()) } answers { Either.Left(CryptoListExceptions.CryptoListNotFound) }
 
         //Act
         presenter.onViewReady(view)

@@ -8,15 +8,15 @@ import com.joancolmenerodev.feature.crypto_list.data.model.map
 import com.joancolmenerodev.feature.crypto_list.domain.exceptions.CryptoListExceptions
 import com.joancolmenerodev.feature.crypto_list.domain.model.Crypto
 import com.joancolmenerodev.library_base.repository.BaseRepository
-import com.joancolmenerodev.library_base.service.ClientException
+import com.joancolmenerodev.library_base.exceptions.ClientException
 import javax.inject.Inject
 
 class CryptoRepositoryImpl @Inject constructor(private val cryptoRetrofitService: CryptoRetrofitService) :
     CryptoRepository, BaseRepository() {
 
-    override suspend fun getCoinList(): List<Crypto> = execute {
+    override suspend fun getCoinList(limit: Int): List<Crypto> = execute {
         try {
-            cryptoRetrofitService.getCryptoCurrency().map()
+            cryptoRetrofitService.getCryptoCurrency(limit).map()
         } catch (exception: Exception) {
             when (exception) {
                 is ClientException.NotFound -> throw CryptoListExceptions.CryptoListNotFound

@@ -1,4 +1,4 @@
-package com.joancolmenerodev.library_base.service
+package com.joancolmenerodev.library_base.exceptions
 
 import java.io.IOException
 

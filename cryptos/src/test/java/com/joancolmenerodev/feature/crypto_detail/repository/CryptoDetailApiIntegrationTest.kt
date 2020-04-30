@@ -5,7 +5,7 @@ import com.joancolmenerodev.feature.crypto_detail.data.model.CryptoDetailDataDTO
 import com.joancolmenerodev.feature.crypto_detail.data.model.CryptoDetailResponse
 import com.joancolmenerodev.feature.crypto_detail.data.model.StatusDTO
 import com.joancolmenerodev.feature.crypto_detail.data.model.UrlsDTO
-import com.joancolmenerodev.library_base.service.ServiceException
+import com.joancolmenerodev.library_base.exceptions.ServiceException
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -16,7 +16,7 @@ class CryptoDetailApiIntegrationTest : IntegrationTest() {
     fun `given that the detail coin is called then it returns success`() {
         // ASSIGN
         val expectedResult = cryptoDetailResponse
-        mockHttpResponse("coin_detail_response.json", HttpURLConnection.HTTP_OK)
+        mockHttpResponse(COIN_DETAIL_RESPONSE_JSON, HttpURLConnection.HTTP_OK)
 
         val response = runBlocking {
             // ACT
@@ -30,19 +30,17 @@ class CryptoDetailApiIntegrationTest : IntegrationTest() {
     @Test(expected = ServiceException::class)
     fun `given that the detail coin is called then it returns failure`() {
         // ASSIGN
-        mockHttpResponse("coin_detail_response.json", HttpURLConnection.HTTP_INTERNAL_ERROR)
+        mockHttpResponse(COIN_DETAIL_RESPONSE_JSON, HttpURLConnection.HTTP_INTERNAL_ERROR)
 
-        val response = runBlocking {
+        runBlocking {
             // ACT
             apiService.getCryptoInfo(CRYPTO_ID)
         }
     }
 
-
-
-
     companion object {
         const val CRYPTO_ID = 2
+        const val COIN_DETAIL_RESPONSE_JSON = "coin_detail_response.json"
         val cryptoDetailResponse = CryptoDetailResponse(
             data = mapOf(
                 "2" to CryptoDetailDataDTO(

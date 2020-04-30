@@ -20,7 +20,7 @@ class CryptoListPresenter @Inject constructor(
         launch {
             view.showProgressBar(isVisible = true)
             withContext(uiContextProviderCoroutine.io()) {
-                getCryptoListUseCase.execute()
+                getCryptoListUseCase.execute(CRYPTOS_PER_PAGE)
             }.fold(
                 ::handleFailure,
                 ::handleCoinList
@@ -50,3 +50,4 @@ class CryptoListPresenter @Inject constructor(
         view?.navigateToCoinDetail(cryptoId = cryptoId)
     }
 }
+private const val CRYPTOS_PER_PAGE = 50

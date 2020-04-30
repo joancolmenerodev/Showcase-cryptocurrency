@@ -1,9 +1,9 @@
 package com.joancolmenerodev
 
 import com.joancolmenerodev.base.retrofit.service.CryptoRetrofitService
-import com.joancolmenerodev.library_base.service.ClientException
-import com.joancolmenerodev.library_base.service.ServerException
-import com.joancolmenerodev.library_base.service.ServiceException
+import com.joancolmenerodev.library_base.exceptions.ClientException
+import com.joancolmenerodev.library_base.exceptions.ServerException
+import com.joancolmenerodev.library_base.exceptions.ServiceException
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -87,11 +87,15 @@ class ErrorInterceptor : Interceptor {
                     HttpURLConnection.HTTP_NOT_FOUND -> throw ClientException.NotFound
                     HttpURLConnection.HTTP_CLIENT_TIMEOUT -> throw ClientException.RequestTimeout
 
-                    else -> throw ServiceException(IllegalStateException("The status code ${response.code} was received but not handled!"))
+                    else -> throw ServiceException(
+                        IllegalStateException("The status code ${response.code} was received but not handled!")
+                    )
                 }
             }
             response
         } catch (error: IOException) {
-            throw ServiceException(error)
+            throw ServiceException(
+                error
+            )
         }
 }

@@ -4,7 +4,7 @@ import com.joancolmenerodev.IntegrationTest
 import com.joancolmenerodev.feature.crypto_list.data.model.CryptoResponse
 import com.joancolmenerodev.feature.crypto_list.data.model.DataDTO
 import com.joancolmenerodev.feature.crypto_list.data.model.StatusDTO
-import com.joancolmenerodev.library_base.service.ServiceException
+import com.joancolmenerodev.library_base.exceptions.ServiceException
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -20,7 +20,7 @@ class CryptoListApiIntegrationTest : IntegrationTest() {
 
         // ACT
         val response = runBlocking {
-            apiService.getCryptoCurrency()
+            apiService.getCryptoCurrency(CRYPTO_PER_PAGE)
         }
 
         // ASSERT
@@ -34,12 +34,13 @@ class CryptoListApiIntegrationTest : IntegrationTest() {
 
         // ACT
         runBlocking {
-            apiService.getCryptoCurrency()
+            apiService.getCryptoCurrency(CRYPTO_PER_PAGE)
         }
     }
 
 
     companion object {
+        private const val CRYPTO_PER_PAGE = 50
         val cryptoResponse = CryptoResponse(
             data = listOf(
                 DataDTO(

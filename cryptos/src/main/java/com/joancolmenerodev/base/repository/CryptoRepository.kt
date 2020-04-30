@@ -5,7 +5,7 @@ import com.joancolmenerodev.feature.crypto_list.domain.model.Crypto
 
 interface CryptoRepository {
 
-    suspend fun getCoinList(): List<Crypto>
+    suspend fun getCoinList(limit: Int): List<Crypto>
     suspend fun getCoinDetail(cryptoId: Int) : CryptoDetail
 
 }

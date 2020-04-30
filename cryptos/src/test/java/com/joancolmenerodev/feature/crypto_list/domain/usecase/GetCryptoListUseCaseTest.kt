@@ -1,8 +1,8 @@
 package com.joancolmenerodev.feature.crypto_list.domain.usecase
 
+import com.joancolmenerodev.base.repository.CryptoRepository
 import com.joancolmenerodev.feature.crypto_list.domain.exceptions.CryptoListExceptions
 import com.joancolmenerodev.feature.crypto_list.domain.model.Crypto
-import com.joancolmenerodev.base.repository.CryptoRepository
 import com.joancolmenerodev.library_base.Either
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -25,10 +25,10 @@ class GetCryptoListUseCaseTest {
     @Test
     fun `given the repository returns the list of crypto then the result is a list of crypto`() {
         //ASSIGN
-        coEvery { cryptoRepository.getCoinList() } answers { cryptoList }
+        coEvery { cryptoRepository.getCoinList(any()) } answers { cryptoList }
 
         //ACT
-        val result = runBlocking { getCryptoListUseCase.execute() }
+        val result = runBlocking { getCryptoListUseCase.execute(CRYPTO_PER_PAGE) }
 
         //ASSERT
         assertEquals(result, Either.Right(cryptoList))
@@ -36,13 +36,13 @@ class GetCryptoListUseCaseTest {
     }
 
     @Test
-    fun `given the repository returns an CryptoListNotFound then the result is an Either CryptoListNotFound`(){
+    fun `given the repository returns an CryptoListNotFound then the result is an Either CryptoListNotFound`() {
         //ASSIGN
         val cryptoListNotFoundException = CryptoListExceptions.CryptoListNotFound
-        coEvery { cryptoRepository.getCoinList() } throws cryptoListNotFoundException
+        coEvery { cryptoRepository.getCoinList(any()) } throws cryptoListNotFoundException
 
         //ACT
-        val result = runBlocking { getCryptoListUseCase.execute() }
+        val result = runBlocking { getCryptoListUseCase.execute(CRYPTO_PER_PAGE) }
 
         //ASSERT
         assertEquals(result, Either.Left(cryptoListNotFoundException))
@@ -50,13 +50,13 @@ class GetCryptoListUseCaseTest {
     }
 
     @Test
-    fun `given the repository returns an CryptoListNotAvailable then the result is an Either CryptoListNotAvailable`(){
+    fun `given the repository returns an CryptoListNotAvailable then the result is an Either CryptoListNotAvailable`() {
         //ASSIGN
         val cryptoListNotAvailableException = CryptoListExceptions.CryptoListNotAvailable
-        coEvery { cryptoRepository.getCoinList() } throws cryptoListNotAvailableException
+        coEvery { cryptoRepository.getCoinList(any()) } throws cryptoListNotAvailableException
 
         //ACT
-        val result = runBlocking { getCryptoListUseCase.execute() }
+        val result = runBlocking { getCryptoListUseCase.execute(CRYPTO_PER_PAGE) }
 
         //ASSERT
         assertEquals(result, Either.Left(cryptoListNotAvailableException))
@@ -64,6 +64,7 @@ class GetCryptoListUseCaseTest {
     }
 
     companion object {
+        private const val CRYPTO_PER_PAGE = 50
         val cryptoList = listOf(
             Crypto(
                 id = 1,

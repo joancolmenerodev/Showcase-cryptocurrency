@@ -48,13 +48,13 @@ sealed class Either<out L, out R> {
      * Creates a Left type.
      * @see Left
      */
-    fun <L> left(a: L) = Either.Left(a)
+    fun <L> left(a: L) = Left(a)
 
     /**
      * Creates a Left type.
      * @see Right
      */
-    fun <R> right(b: R) = Either.Right(b)
+    fun <R> right(b: R) = Right(b)
 
     /**
      * Applies fnL if this is a Left or fnR if this is a Right.
@@ -66,20 +66,4 @@ sealed class Either<out L, out R> {
             is Left -> fnL(a)
             is Right -> fnR(b)
         }
-}
-
-fun <L, R> Either<L, R>.getOrElse(value: R): R =
-    when (this) {
-        is Either.Left -> value
-        is Either.Right -> b
-    }
-
-
-sealed class ErrorEntity {
-
-    object Network : ErrorEntity()
-
-    object ServiceUnavailable : ErrorEntity()
-
-    object Unknown : ErrorEntity()
 }

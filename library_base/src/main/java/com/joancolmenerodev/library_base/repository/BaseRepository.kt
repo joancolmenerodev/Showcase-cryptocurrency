@@ -1,7 +1,8 @@
 package com.joancolmenerodev.library_base.repository
 
-import com.joancolmenerodev.library_base.service.ServerException
-import com.joancolmenerodev.library_base.service.ServiceException
+import com.joancolmenerodev.library_base.exceptions.SomethingWentWrongException
+import com.joancolmenerodev.library_base.exceptions.ServerException
+import com.joancolmenerodev.library_base.exceptions.ServiceException
 
 abstract class BaseRepository {
 
@@ -10,7 +11,9 @@ abstract class BaseRepository {
             block()
         } catch (error: ServiceException) {
             if (error is ServerException.ServiceUnavailable) {
-                throw SomethingWentWrongException(error)
+                throw SomethingWentWrongException(
+                    error
+                )
             } else {
                 throw error
             }

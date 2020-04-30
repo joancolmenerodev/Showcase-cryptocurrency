@@ -13,7 +13,7 @@ import com.joancolmenerodev.feature.crypto_list.data.model.DataDTO
 import com.joancolmenerodev.feature.crypto_list.data.model.StatusDTO
 import com.joancolmenerodev.feature.crypto_list.domain.exceptions.CryptoListExceptions
 import com.joancolmenerodev.feature.crypto_list.domain.model.Crypto
-import com.joancolmenerodev.library_base.service.ClientException
+import com.joancolmenerodev.library_base.exceptions.ClientException
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
@@ -38,7 +38,7 @@ class CryptoRepositoryImplTest {
     fun `given the repository returns a coin list`() {
 
         //ASSIGN
-        coEvery { mockApi.getCryptoCurrency() } coAnswers { cryptoResponse }
+        coEvery { mockApi.getCryptoCurrency(any()) } coAnswers { cryptoResponse }
 
         val expectedResult = listOf(
             Crypto(1, "Bitcoin", "BTC"),
@@ -47,7 +47,7 @@ class CryptoRepositoryImplTest {
 
         //ACT
         val result = runBlocking {
-            coinListRepository.getCoinList()
+            coinListRepository.getCoinList(CRYPTO_PER_PAGE)
         }
 
         //ASSERT
@@ -59,11 +59,11 @@ class CryptoRepositoryImplTest {
 
         //ASSIGN
         val clientException = ClientException.NotFound
-        coEvery { mockApi.getCryptoCurrency() } throws clientException
+        coEvery { mockApi.getCryptoCurrency(any()) } throws clientException
 
         //ACT
         runBlocking {
-            coinListRepository.getCoinList()
+            coinListRepository.getCoinList(CRYPTO_PER_PAGE)
         }
     }
 
@@ -72,11 +72,11 @@ class CryptoRepositoryImplTest {
 
         //ASSIGN
         val clientException = ClientException.RequestTimeout
-        coEvery { mockApi.getCryptoCurrency() } throws clientException
+        coEvery { mockApi.getCryptoCurrency(any()) } throws clientException
 
         //ACT
         runBlocking {
-            coinListRepository.getCoinList()
+            coinListRepository.getCoinList(CRYPTO_PER_PAGE)
         }
     }
 
@@ -123,6 +123,7 @@ class CryptoRepositoryImplTest {
 
     companion object {
         const val CRYPTO_ID = 2
+        private const val CRYPTO_PER_PAGE = 50
         val cryptoResponse = CryptoResponse(
             data = listOf(
                 DataDTO(
