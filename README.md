@@ -54,6 +54,11 @@ There are a few ways to open this project.
 
 Once it's opened you can run the app, but I recommend to you to create a new [API KEY](https://pro.coinmarketcap.com/signup) so you don't waste all of my free usages.
 
+### Running tests
+
+`./gradlew test`
+
+
 
 
 
