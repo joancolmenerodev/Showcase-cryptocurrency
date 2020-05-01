@@ -1,16 +1,18 @@
 package com.joancolmenerodev.showcase_kotlin
 
 import android.app.Application
-import com.joancolmenerodev.showcase_kotlin.di.DaggerAppComponent
+import com.joancolmenerodev.showcase_kotlin.base.di.AppComponent
+import com.joancolmenerodev.showcase_kotlin.base.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
-class App : Application() , HasAndroidInjector {
+
+open class App : Application(), HasAndroidInjector {
 
     @Inject
-    lateinit var androidInjector : DispatchingAndroidInjector<Any>
+    lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     override fun androidInjector(): AndroidInjector<Any> = androidInjector
 
@@ -19,5 +21,11 @@ class App : Application() , HasAndroidInjector {
         DaggerAppComponent.factory()
             .create(this)
             .inject(this)
+    }
+
+
+    open fun getAppComponent(): AppComponent {
+        return DaggerAppComponent.factory()
+            .create(this)
     }
 }

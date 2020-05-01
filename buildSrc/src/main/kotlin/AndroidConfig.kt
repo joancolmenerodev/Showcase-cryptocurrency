@@ -8,5 +8,5 @@ object AndroidConfig {
     const val VERSION_NAME = "1.0"
 
     const val APPLICATION_ID = "com.joancolmenerodev.showcase_kotlin"
-    const val TEST_INSTRUMENTATION_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
+    const val TEST_INSTRUMENTATION_RUNNER = "com.joancolmenerodev.showcase_kotlin.base.TestRunner"
 }

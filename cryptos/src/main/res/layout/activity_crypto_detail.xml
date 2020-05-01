@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/default_padding"
+    android:id="@+id/main_constraintLayout_crypto_detail"
     tools:context="com.joancolmenerodev.feature.crypto_detail.presentation.CryptoDetailActivity">
 
     <ProgressBar

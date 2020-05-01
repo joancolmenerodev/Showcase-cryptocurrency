@@ -11,6 +11,12 @@ object TestLibraryDependencies {
         "com.squareup.okhttp3:mockwebserver:${TestLibraryVersion.okHttpVersion}"
     const val kotlinxCoroutinestest =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${TestLibraryVersion.kotlinXCoroutinesTestVersion}"
+    const val espressoCore =
+        "androidx.test.espresso:espresso-core:${TestLibraryVersion.espressoCoreVersion}"
+    const val espressoContrib =
+        "androidx.test.espresso:espresso-contrib:${TestLibraryVersion.espressoCoreVersion}"
+    const val espressoIntents =
+        "androidx.test.espresso:espresso-intents:${TestLibraryVersion.espressoCoreVersion}"
 }
 
 private object TestLibraryVersion {
@@ -22,4 +28,5 @@ private object TestLibraryVersion {
     const val okhttp3IdlingResourcesVersion = "1.0.0"
     const val mockKVersion = "1.9"
     const val kotlinXCoroutinesTestVersion = "1.3.5"
+    const val espressoCoreVersion = "3.2.0"
 }

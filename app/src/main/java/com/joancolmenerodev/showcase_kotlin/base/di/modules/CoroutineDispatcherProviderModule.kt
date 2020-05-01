@@ -1,4 +1,4 @@
-package com.joancolmenerodev.showcase_kotlin.di.modules
+package com.joancolmenerodev.showcase_kotlin.base.di.modules
 
 import com.joancolmenerodev.library_base.threading.CoroutineDispatcherProvider
 import com.joancolmenerodev.library_base.threading.DefaultCoroutineDispatcherProvider

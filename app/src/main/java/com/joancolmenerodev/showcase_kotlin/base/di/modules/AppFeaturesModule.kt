@@ -1,4 +1,4 @@
-package com.joancolmenerodev.showcase_kotlin.di.modules
+package com.joancolmenerodev.showcase_kotlin.base.di.modules
 
 import com.joancolmenerodev.base.di.CryptoListModule
 import dagger.Module

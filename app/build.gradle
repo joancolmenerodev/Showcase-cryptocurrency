@@ -56,6 +56,12 @@ dependencies {
     kapt LibrariesDependencies.DAGGER_ANDROID_KAPT
     kapt LibrariesDependencies.DAGGER_KAPT
     kapt LibrariesDependencies.DAGGER_ANNOTATION_PROCESSOR
+    kaptAndroidTest LibrariesDependencies.DAGGER_ANDROID
+
+    androidTestImplementation TestLibraryDependencies.espressoCore
+    androidTestImplementation TestLibraryDependencies.espressoContrib
+    androidTestImplementation TestLibraryDependencies.espressoIntents
+    androidTestImplementation TestLibraryDependencies.okhttp3IdlingResources
 
     implementation project(ModuleDependencies.LIBRARY_BASE)
     implementation project(ModuleDependencies.NETWORKING)

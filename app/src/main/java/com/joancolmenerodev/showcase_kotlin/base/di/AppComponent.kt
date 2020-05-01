@@ -1,9 +1,9 @@
-package com.joancolmenerodev.showcase_kotlin.di
+package com.joancolmenerodev.showcase_kotlin.base.di
 
 import com.joancolmenerodev.networking.di.NetworkingModule
 import com.joancolmenerodev.showcase_kotlin.App
-import com.joancolmenerodev.showcase_kotlin.di.modules.AppFeaturesModule
-import com.joancolmenerodev.showcase_kotlin.di.modules.CoroutineDispatcherProviderModule
+import com.joancolmenerodev.showcase_kotlin.base.di.modules.AppFeaturesModule
+import com.joancolmenerodev.showcase_kotlin.base.di.modules.CoroutineDispatcherProviderModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
