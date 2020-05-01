@@ -8,7 +8,8 @@ object LibrariesDependencies {
     const val DAGGER_KAPT = "com.google.dagger:dagger-compiler:${LibraryVersion.DAGGER_VERSION}"
     const val DAGGER_ANDROID_KAPT =
         "com.google.dagger:dagger-android-processor:${LibraryVersion.DAGGER_ANDROID_VERSION}"
-    const val DAGGER_ANNOTATION_PROCESSOR = "com.google.dagger:dagger-android-processor:${LibraryVersion.DAGGER_ANDROID_VERSION}"
+    const val DAGGER_ANNOTATION_PROCESSOR =
+        "com.google.dagger:dagger-android-processor:${LibraryVersion.DAGGER_ANDROID_VERSION}"
 
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${LibraryVersion.RETROFIT_VERSION}"
     const val RETROFIT_GSON_CONVERTER =

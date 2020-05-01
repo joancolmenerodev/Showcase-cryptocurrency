@@ -1,7 +1,7 @@
 package com.joancolmenerodev.base.di
 
-import com.joancolmenerodev.base.repository.CryptoRepositoryImpl
 import com.joancolmenerodev.base.repository.CryptoRepository
+import com.joancolmenerodev.base.repository.CryptoRepositoryImpl
 import dagger.Binds
 import dagger.Module
 

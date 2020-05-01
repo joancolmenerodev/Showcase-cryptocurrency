@@ -36,7 +36,7 @@ class GetCryptoDetailUseCaseTest {
     }
 
     @Test
-    fun `given the repository returns an CryptoDetailNotFound then the result is an Either Left with CryptoDetailNotFound`(){
+    fun `given the repository returns an CryptoDetailNotFound then the result is an Either Left with CryptoDetailNotFound`() {
         //ASSIGN
         val cryptoDetailNotFoundException = CryptoDetailExceptions.CryptoNotFound
         coEvery { cryptoRepository.getCoinDetail(any()) } throws cryptoDetailNotFoundException
@@ -50,7 +50,7 @@ class GetCryptoDetailUseCaseTest {
     }
 
     @Test
-    fun `given the repository returns an CryptoListNotAvailable then the result is an Either Left with CryptoListNotAvailable`(){
+    fun `given the repository returns an CryptoListNotAvailable then the result is an Either Left with CryptoListNotAvailable`() {
         //ASSIGN
         val cryptoDetailNotAvailableException = CryptoDetailExceptions.CryptoUnavailable
         coEvery { cryptoRepository.getCoinDetail(any()) } throws cryptoDetailNotAvailableException

@@ -6,11 +6,13 @@
         <activity
             android:name="com.joancolmenerodev.feature.crypto_detail.presentation.CryptoDetailActivity"
             android:label="@string/crypto_detail_activity_name"
-            android:theme="@style/Theme.AppCompat"
-            android:parentActivityName=".presentation.CryptoListActivity"/>
+            android:parentActivityName=".presentation.CryptoListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".presentation.CryptoListActivity"
             android:label="@string/crypto_list_activity_name"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat" />
     </application>
 

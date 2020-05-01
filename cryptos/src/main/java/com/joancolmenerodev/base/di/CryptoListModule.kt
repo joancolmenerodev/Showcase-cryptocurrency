@@ -17,6 +17,6 @@ abstract class CryptoListModule {
     @ContributesAndroidInjector(modules = [CryptoListPresenterDependenciesModule::class])
     abstract fun bindCryptoListActivity(): CryptoListActivity
 
-    @ContributesAndroidInjector(modules =[CryptoDetailPresenterDependenciesModule::class])
-    abstract fun bindCryptoDetailActivity() : CryptoDetailActivity
+    @ContributesAndroidInjector(modules = [CryptoDetailPresenterDependenciesModule::class])
+    abstract fun bindCryptoDetailActivity(): CryptoDetailActivity
 }

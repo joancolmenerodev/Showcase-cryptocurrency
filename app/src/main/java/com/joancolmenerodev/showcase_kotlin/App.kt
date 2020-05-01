@@ -1,7 +1,6 @@
 package com.joancolmenerodev.showcase_kotlin
 
 import android.app.Application
-import com.joancolmenerodev.showcase_kotlin.base.di.AppComponent
 import com.joancolmenerodev.showcase_kotlin.base.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -23,9 +22,4 @@ open class App : Application(), HasAndroidInjector {
             .inject(this)
     }
 
-
-    open fun getAppComponent(): AppComponent {
-        return DaggerAppComponent.factory()
-            .create(this)
-    }
 }

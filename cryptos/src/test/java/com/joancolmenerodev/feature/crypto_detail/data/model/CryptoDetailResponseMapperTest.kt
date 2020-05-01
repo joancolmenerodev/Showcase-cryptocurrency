@@ -8,7 +8,7 @@ import org.junit.Test
 class CryptoDetailResponseMapperTest {
 
     @Test
-    fun `crypto detail response mapper`(){
+    fun `crypto detail response mapper`() {
         //ASSIGN
         val expectedResult = CryptoDetail(
             logo = "https://s2.coinmarketcap.com/static/img/coins/64x64/6.png",

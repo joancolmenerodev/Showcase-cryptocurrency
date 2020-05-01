@@ -7,8 +7,8 @@ import com.joancolmenerodev.feature.crypto_detail.domain.model.CryptoDetail
 import com.joancolmenerodev.feature.crypto_list.data.model.map
 import com.joancolmenerodev.feature.crypto_list.domain.exceptions.CryptoListExceptions
 import com.joancolmenerodev.feature.crypto_list.domain.model.Crypto
-import com.joancolmenerodev.library_base.repository.BaseRepository
 import com.joancolmenerodev.library_base.exceptions.ClientException
+import com.joancolmenerodev.library_base.repository.BaseRepository
 import javax.inject.Inject
 
 class CryptoRepositoryImpl @Inject constructor(private val cryptoRetrofitService: CryptoRetrofitService) :

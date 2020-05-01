@@ -50,9 +50,5 @@ dependencies {
     implementation AndroidDependencies.MATERIAL
     implementation TestLibraryDependencies.mockWebServer
 
-    androidTestImplementation TestLibraryDependencies.espressoCore
-    androidTestImplementation TestLibraryDependencies.espressoContrib
-    androidTestImplementation TestLibraryDependencies.espressoIntents
-
     implementation project(ModuleDependencies.LIBRARY_BASE)
 }

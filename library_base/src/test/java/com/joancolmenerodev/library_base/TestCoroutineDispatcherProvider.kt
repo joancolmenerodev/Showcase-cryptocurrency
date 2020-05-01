@@ -2,7 +2,6 @@ package com.joancolmenerodev.library_base
 
 import com.joancolmenerodev.library_base.threading.CoroutineDispatcherProvider
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 
 class TestCoroutineDispatcherProvider : CoroutineDispatcherProvider {

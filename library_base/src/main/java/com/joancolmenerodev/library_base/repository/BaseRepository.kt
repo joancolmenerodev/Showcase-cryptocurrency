@@ -1,8 +1,8 @@
 package com.joancolmenerodev.library_base.repository
 
-import com.joancolmenerodev.library_base.exceptions.SomethingWentWrongException
 import com.joancolmenerodev.library_base.exceptions.ServerException
 import com.joancolmenerodev.library_base.exceptions.ServiceException
+import com.joancolmenerodev.library_base.exceptions.SomethingWentWrongException
 
 abstract class BaseRepository {
 
